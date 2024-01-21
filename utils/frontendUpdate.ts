@@ -6,6 +6,8 @@ const CONTRACT_ADDRESS_FILE_LOCATION =
   "../Lottery/frontend/app/constants/contract.json";
 
 const frontendUpdate = async (deployedContract: DeployResult) => {
+  console.log("FrontEnd Updation Started");
+
   const chainId = network.config.chainId!;
   const currentAddresses = JSON.parse(
     readFileSync(CONTRACT_ADDRESS_FILE_LOCATION, "utf8")
@@ -23,6 +25,8 @@ const frontendUpdate = async (deployedContract: DeployResult) => {
     CONTRACT_ABI_FILE_LOCATION,
     JSON.stringify(deployedContract.abi)
   );
+  console.log("FrontEnd Updation Successfully Completed");
+
   return;
 };
 export default frontendUpdate;

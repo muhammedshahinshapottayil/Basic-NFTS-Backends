@@ -4,11 +4,11 @@ import { developmentChains } from "../../helper-hardhat-config";
 import { ethers, getNamedAccounts, network } from "hardhat";
 
 developmentChains.includes(network.name)
-  ? describe("Lottery Unit Tests", () => {
+  ? describe("BasicNFT Unit Tests", () => {
       let lottery, accounts: any;
       beforeEach(async () => {
         const { deployer } = await getNamedAccounts();
-        lottery = await ethers.getContractAt("Lottery", deployer);
+        lottery = await ethers.getContractAt("BasicNFT", deployer);
         console.log(lottery);
       });
       it("hai", () => {
